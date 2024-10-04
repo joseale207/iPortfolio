@@ -1,0 +1,10 @@
+{
+    "name": "one-drive-escritorio-programacion-cursos-portafolio",
+    "version": "1.0.0",
+    "description": "Portafolio de programación y cursos",
+    "engines": {
+      "node": ">=14.x.x"
+    },
+    "dependencies": {}
+  }
+  
