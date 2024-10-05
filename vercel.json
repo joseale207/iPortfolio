@@ -6,6 +6,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "portfolio-details.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "css/**",
       "use": "@vercel/static"
     },
@@ -20,6 +24,12 @@
     {
       "src": "js/**",
       "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/portfolio-details",
+      "dest": "/portfolio-details.html"
     }
   ],
   "rewrites": [
