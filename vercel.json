@@ -26,12 +26,6 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
-    {
-      "src": "/portfolio-details",
-      "dest": "/portfolio-details.html"
-    }
-  ],
   "rewrites": [
     {
       "source": "/(.*)",
