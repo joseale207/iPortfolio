@@ -32,3 +32,21 @@ each(items, function(item) {
     console.log(item); // Esto debería funcionar sin problemas
 });
 import { Analytics } from "@vercel/analytics/react"
+// App.js
+import React from 'react';
+import { Analytics } from '@vercel/analytics/react'; // Aquí se importa el componente
+
+function App() {
+    return (
+        <div>
+            <h1>Bienvenido a mi Portafolio</h1>
+            {/* Aquí puedes agregar más contenido o componentes */}
+
+            <Analytics /> {/* Aquí se incluye el componente para la analítica */}
+        </div>
+    );
+}
+
+export default App;
+
+import { Analytics } from "@vercel/analytics/react"
