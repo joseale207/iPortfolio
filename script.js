@@ -31,3 +31,4 @@ const items = [1, 2, 3, 4];
 each(items, function(item) {
     console.log(item); // Esto debería funcionar sin problemas
 });
+import { Analytics } from "@vercel/analytics/react"

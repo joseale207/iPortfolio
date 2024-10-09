@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio Jose Alejandro</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/img/favicon-32x32.png" rel="icon">
+  <link href="/img/A_modern_interpretation_of_the_traditional_symbol_converted.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Custom CSS for Transformer Effect -->
+  <style>
+    /* Efecto tecnológico de entrada para la sección del header */
+    @keyframes transformers-in {
+      0% {
+        transform: scale(0) rotateX(90deg);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1) rotateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Animación para los íconos sociales */
+    @keyframes icon-effect {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(-10px) rotate(20deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    /* Aplica la animación a los íconos sociales del header */
+    .profile .social-links a {
+      display: inline-block;
+      margin: 0 5px;
+      transition: color 0.3s ease;
+      animation: icon-effect 1s ease infinite;
+    }
+
+    .profile .social-links a:hover {
+      color: #3d5f3e; /* Cambiar color al pasar el ratón */
+    }
+
+    /* Estilo para detener la animación después de 5 segundos */
+    .profile .social-links {
+      animation: icon-effect 1s ease infinite;
+      animation-delay: 5s; /* Para detener después de 5 segundos */
+      animation-fill-mode: forwards; /* Mantiene el último estado */
+    }
+
+    /* Estilos adicionales para la galería */
+    .portfolio-wrap {
+      margin: 10px;
+      transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+      transform: translateY(50px);
+      opacity: 0;
+    }
+
+    .portfolio-wrap[data-aos='fade-in'] {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .portfolio-wrap:hover {
+      transform: scale(1.05) rotateY(10deg);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+
+  <!-- Template Main CSS File -->
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+      <div class="profile">
+        <img src="/img/backinblack.jpg" alt="" class="img-fluid rounded-circle" style="width:150px;">
+        <h1 class="text-light"><a href="index.html"> José A. Jiménez H.</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://github.com/joseale207" target="_blank" class="github"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/josealejimenez/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="#home" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#gallery" class="nav-link scrollto"><i class="bx bx-images"></i> <span>Gallery</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= Main ======= -->
+  <main id="main">
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Guides & Repertoire Gallery</h2>
+          <p>Explore the collection of guides and resources.</p>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item" data-aos="fade-in">
+            <img src="/img/portfolio/Guia_20_PASOS_page-0001.jpg" class="img-fluid" alt="Guía 1">
+            <div class="portfolio-info">
+              <h4>Guide Title 1</h4>
+              <p>Brief description of Guide 1.</p>
+              <a href="/downloads/guide1.pdf" class="details-link" download><i class="bx bx-download"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item" data-aos="fade-in">
+            <img src="/img/portfolio/guide2.jpg" class="img-fluid" alt="Guía 2">
+            <div class="portfolio-info">
+              <h4>Guide Title 2</h4>
+              <p>Brief description of Guide 2.</p>
+              <a href="/downloads/guide2.pdf" class="details-link" download><i class="bx bx-download"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item" data-aos="fade-in">
+            <img src="/img/portfolio/guide3.jpg" class="img-fluid" alt="Guía 3">
+            <div class="portfolio-info">
+              <h4>Guide Title 3</h4>
+              <p>Brief description of Guide 3.</p>
+              <a href="/downloads/guide3.pdf" class="details-link" download><i class="bx bx-download"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Gallery Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>iPortfolio</span></strong>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/vendor/aos/aos.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/js/main.js"></script>
+
+  <!-- Inicializa la animación AOS -->
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true,
+    });
+  </script>
+
+</body>
+
+</html>
