@@ -1239,3 +1239,59 @@ section {
 .heart {
   color: rgb(187, 89, 89); /* Cambia el color del corazón si deseas */
 }
+
+/* Oculta el submenú inicialmente */
+.submenu {
+  display: none;
+  position: absolute;
+  left: 81%; /* Mantiene la alineación del submenú con el ítem del menú principal */
+  top: 66%; /* Alineado justo debajo del ítem de "Portfolio" */
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo gris claro transparente */
+  padding: auto; /* Espaciado interno */
+  list-style: none;
+  z-index: 10; /* Se asegura de que el submenú esté por encima de otros elementos */
+  border-radius: 9px; /* Bordes redondeados para un aspecto más suave */
+  width: auto; /* Ajusta el ancho para ser compacto y elegante */
+  box-shadow: 4px 3px 0px rgba(243, 242, 242, 0.15); /* Sombra suave para darle profundidad */
+  backdrop-filter: blur(4px); /* Efecto de desenfoque de fondo */
+  border: 0.1px solid rgba(255, 255, 255, 0.3); /* Borde delicado para darle más definición */
+}
+
+/* Muestra el submenú al pasar el mouse sobre el elemento padre */
+.submenu-parent:hover .submenu {
+  display: block;
+}
+
+/* Estilo para los elementos del submenú */
+.submenu li {
+  margin: 0; /* Sin margen extra para mantener el estilo consistente */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria sutil entre los enlaces */
+}
+
+.submenu li:last-child {
+  border-bottom: none; /* Quita la línea divisoria del último ítem */
+}
+
+/* Estilo para los enlaces del submenú */
+.submenu li a {
+  color: white; /* Texto blanco para un alto contraste */
+  text-decoration: none;
+  padding: 4px 4px; /* Espaciado ajustado para mayor elegancia */
+  display: block;
+  background-color: transparent; /* Fondo transparente para los enlaces */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+  border-radius: 6px; /* Bordes redondeados para los enlaces */
+}
+
+/* Efecto al pasar el mouse sobre un enlace del submenú */
+.submenu li a:hover {
+  background-color: rgba(243, 245, 247, 0.4); /* Fondo azul claro al pasar el mouse */
+  color: rgb(5, 104, 111); /* Texto blanco para alto contraste en hover */
+}
+
+/* Estilo especial para la página de galería resaltada */
+.submenu li a.highlighted {
+  background-color: rgba(59, 53, 53, 0.473); /* Fondo ligeramente más oscuro */
+  color: rgba(254, 254, 254, 0.8); /* Texto normal sin negrita */
+  /* font-weight eliminado para evitar negrita */
+}
