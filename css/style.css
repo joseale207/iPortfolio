@@ -1295,3 +1295,43 @@ section {
   color: rgba(254, 254, 254, 0.8); /* Texto normal sin negrita */
   /* font-weight eliminado para evitar negrita */
 }
+.portfolio-wrap {
+  position: relative; /* Necesario para el efecto de brillo */
+}
+
+.portfolio-wrap img {
+  display: block; /* Asegúrate de que la imagen ocupe el espacio completo */
+  transition: transform 0.3s ease; /* Suaviza la transición */
+}
+
+.portfolio-wrap:hover img {
+  transform: scale(1.05); /* Efecto de zoom en la imagen al pasar el mouse */
+}
+
+/* Efecto de brillo que no interfiere con los clics */
+.brightness-effect {
+  position: absolute; /* Posiciona el brillo sobre la imagen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5); /* Color de brillo */
+  opacity: 0; /* Oculto inicialmente */
+  transition: opacity 0.3s ease; /* Suaviza la transición */
+  pointer-events: none; /* Permite clics en la imagen subyacente */
+}
+
+.portfolio-wrap:hover .brightness-effect {
+  opacity: 1; /* Muestra el brillo al pasar el mouse */
+}
+
+/* Si tienes un efecto de brillo en el fondo */
+.brightness-effect {
+  pointer-events: none; /* Permite clics en la imagen subyacente */
+}
+
+/* Asegúrate de que el enlace sea visible */
+.portfolio-wrap a {
+  position: relative;
+  z-index: 2; /* Asegura que el enlace esté por encima del efecto */
+}
