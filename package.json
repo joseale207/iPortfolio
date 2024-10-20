@@ -6,6 +6,15 @@
         "node": ">=14.x.x"
     },
     "dependencies": {
-        "@vercel/analytics": "^1.3.1"
+        "@vercel/analytics": "^1.3.1",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-scripts": "^5.0.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
     }
 }
