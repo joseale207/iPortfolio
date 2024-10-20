@@ -1219,3 +1219,23 @@ section {
 .download-btn i {
   margin-right: 5px; /* Espacio entre el ícono y el texto */
 }
+
+
+#message {
+  transition: opacity 0.5s ease;
+  opacity: 0; /* Comienza como invisible */
+}
+
+.butterfly, .heart {
+  position: absolute;
+  font-size: 15px; /* Ajusta el tamaño según sea necesario */
+  transition: transform 2s, opacity 2s;
+}
+
+.butterfly {
+  color: rgb(85, 85, 145); /* Cambia el color de la mariposa si deseas */
+}
+
+.heart {
+  color: rgb(187, 89, 89); /* Cambia el color del corazón si deseas */
+}

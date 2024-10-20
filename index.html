@@ -15,7 +15,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+  <script src="path/to/lightbox.js" defer></script>
   <!-- Vendor CSS Files -->
   <link href="/vendor/aos/aos.css" rel="stylesheet">
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -513,7 +513,7 @@
   <a href="inner-guides.html" title="Ver más guías" style="color: #f5c518;">
     <i class="bx bx-book bx-lg" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); transition: transform 0.3s, text-shadow 0.3s;"></i>
   </a>
-  <p style="color: #ffffff; font-size: 18px;">Ver más guías</p>
+  <p style="color: #ffffff; font-size: 18px;">View all the Guides</p>
 </div>
 
 
@@ -551,7 +551,7 @@
             <i class="bi bi-phone"></i>
           </div>
           <h4>Phone:</h4>
-          <p><a href="tel:+34610229431">"Call me"</a></p>
+          <p><a href="tel:+34610229431">Call me</a></p>
         </div>
 
         <div class="info text-center">
@@ -570,23 +570,28 @@
   </main><!-- End #main -->
 
   <!--Footer-->
-  <footer id="footer" style="background-color: #1d1d1d; padding: 8px; text-align: center;">
-    <div class="container">
-      <!-- Grid para logo del conejo y redes sociales -->
+<!-- Footer -->
+<footer id="footer" style="background-color: #1d1d1d; padding: 8px; text-align: center; position: relative;">
+  <div class="container">
       <div class="row justify-content-center align-items-center">
-      
-        <!-- Columna para el logo del conejo -->
-        <div class="col-auto">
-          <iframe src="https://img.icons8.com/ios-filled/30/ffffff/rabbit.png" style="border: none; width: 30px; height: 30px;"></iframe>
-        </div>
-        
-        <!-- Columna para el texto del conejo -->
-        <div class="col-auto">
-          <p style="color: #ffffff; font-size: 14px; margin: 0;"> "Follow your instincts"</p>
-        </div>
-    </div>
-  </footer>
-  <!-- End  Footer -->
+          <div class="col-auto">
+              <img id="rabbit-icon" src="https://img.icons8.com/ios-filled/30/ffffff/rabbit.png" style="border: none; width: 30px; height: 30px; cursor: pointer;" alt="Conejo">
+          </div>
+          <div class="col-auto">
+              <p style="color: #ffffff; font-size: 14px; margin: 0;">"Follow your instincts"</p>
+          </div>
+      </div>
+  </div>
+  <div id="message" style="position: absolute; top: calc(50% - 40px); left: 50%; transform: translate(-50%, -100%); background-color: rgba(181, 111, 159, 0.8); color: white; padding: 15px; border-radius: 5px; display: none;">
+    Thanks Emma(+)
+</div>
+
+  <div id="animation-container" style="position: absolute; width: 100%; height: 100%; pointer-events: none;"></div>
+</footer>
+<!-- End Footer -->
+
+<!-- Incluye tu archivo JS -->
+<script src="script.js" defer></script>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

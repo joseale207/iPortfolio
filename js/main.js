@@ -334,3 +334,66 @@ function each(collection, callback) {
 
   // Resto del código...
 }
+
+// Espera a que el documento esté completamente cargado
+document.addEventListener('DOMContentLoaded', () => {
+  // Agrega el evento de clic al icono del conejo
+  document.getElementById('rabbit-icon').addEventListener('click', () => {
+      const message = document.getElementById('message');
+      
+      // Muestra el mensaje
+      message.style.display = 'block';
+
+      // Opcional: Desvanecer el mensaje después de un tiempo
+      setTimeout(() => {
+          message.style.opacity = '1'; // Asegúrate de que la opacidad esté al 1 para mostrarlo
+          setTimeout(() => {
+              message.style.opacity = '0'; // Cambia la opacidad a 0 para ocultarlo
+              setTimeout(() => {
+                  message.style.display = 'none'; // Oculta el mensaje completamente
+              }, 500); // Espera a que termine la animación
+          }, 5000); // Muestra el mensaje por 5 segundos
+      }, 100); // Pequeña pausa para asegurarse de que se muestre
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const rabbitIcon = document.getElementById('rabbit-icon');
+  const message = document.getElementById('message');
+  const animationContainer = document.getElementById('animation-container');
+
+  rabbitIcon.addEventListener('click', () => {
+      // Mostrar el mensaje
+      message.style.display = 'block';
+      message.style.opacity = '0,5';
+
+
+      // Animación de mariposas
+      for (let i = 0; i < 5; i++) {
+          const butterfly = document.createElement('div');
+          butterfly.className = 'butterfly';
+          butterfly.textContent = '🦋'; // Mariposa
+          butterfly.style.left = `${rabbitIcon.offsetLeft + 15}px`; // Centrado sobre el icono
+          butterfly.style.top = `${rabbitIcon.offsetTop - 20}px`; // Ajustar posición arriba del icono
+          animationContainer.appendChild(butterfly);
+        
+          // Animación de mariposas
+          setTimeout(() => {
+              butterfly.style.transform = `translateY(-100px)`;
+              butterfly.style.opacity = '0';
+              setTimeout(() => {
+                  butterfly.remove();
+              }, 2000);
+          }, 50);
+      }
+
+      // Desvanecer el mensaje después de  segundos
+      setTimeout(() => {
+          message.style.opacity = '0';
+          setTimeout(() => {
+              message.style.display = 'none';
+              message.style.opacity = '1'; // Resetea la opacidad para el próximo clic
+          }, 2000);
+      }, 2000);
+  });
+});
