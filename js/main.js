@@ -397,3 +397,41 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 2000);
   });
 });
+// JavaScript para abrir y cerrar el modal
+document.getElementById("openFormButton").onclick = function () {
+  document.getElementById("contactModal").style.display = "flex"; // Cambiamos a flex para centrar
+};
+
+document.getElementById("closeModalButton").onclick = function () {
+  document.getElementById("contactModal").style.display = "none";
+};
+
+window.onclick = function (event) {
+  const modal = document.getElementById("contactModal");
+  if (event.target == modal) {
+      modal.style.display = "none";
+  }
+};
+
+// Envío de datos a la API
+document.getElementById("contactForm").onsubmit = async function (event) {
+  event.preventDefault();
+
+  const name = event.target.name.value;
+  const email = event.target.email.value;
+  const message = event.target.message.value;
+
+  const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message }),
+  });
+
+  if (response.ok) {
+      alert("Message sent successfully!");
+      event.target.reset();
+      document.getElementById("contactModal").style.display = "none"; // Cierra el modal después de enviar
+  } else {
+      alert("There was an error. Please try again.");
+  }
+};

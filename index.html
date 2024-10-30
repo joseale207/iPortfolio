@@ -566,6 +566,25 @@
     </div>
 
   </div>
+  <!-- Botón para abrir el formulario -->
+<!-- Botón estilizado para abrir el formulario de contacto -->
+<button id="openFormButton" class="styled-button">Get in Touch</button>
+
+<!-- Modal del formulario de contacto -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModalButton">&times;</span>
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+
+
 </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
@@ -589,6 +608,7 @@
   <div id="animation-container" style="position: absolute; width: 0%; height: 0%; pointer-events: none;"></div>
 </footer>
 <!-- End Footer -->
+
 
 <!-- Incluye tu archivo JS -->
 <script src="script.js" defer></script>
