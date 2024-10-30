@@ -1247,14 +1247,11 @@ section {
   left: 81%; /* Mantiene la alineación del submenú con el ítem del menú principal */
   top: 66%; /* Alineado justo debajo del ítem de "Portfolio" */
   background-color: rgba(255, 255, 255, 0.1); /* Fondo gris claro transparente */
-  padding: auto; /* Espaciado interno */
+  padding: 0; /* Sin padding adicional */
   list-style: none;
   z-index: 10; /* Se asegura de que el submenú esté por encima de otros elementos */
-  border-radius: 9px; /* Bordes redondeados para un aspecto más suave */
-  width: auto; /* Ajusta el ancho para ser compacto y elegante */
-  box-shadow: 4px 3px 0px rgba(243, 242, 242, 0.15); /* Sombra suave para darle profundidad */
-  backdrop-filter: blur(4px); /* Efecto de desenfoque de fondo */
-  border: 0.1px solid rgba(255, 255, 255, 0.3); /* Borde delicado para darle más definición */
+  border-radius: 9px; /* Bordes redondeados */
+  box-shadow: 4px 3px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para darle profundidad */
 }
 
 /* Muestra el submenú al pasar el mouse sobre el elemento padre */
@@ -1264,77 +1261,33 @@ section {
 
 /* Estilo para los elementos del submenú */
 .submenu li {
-  margin: 0; /* Sin margen extra para mantener el estilo consistente */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria sutil entre los enlaces */
+  margin: 0; /* Sin margen extra */
 }
 
-.submenu li:last-child {
-  border-bottom: none; /* Quita la línea divisoria del último ítem */
-}
-
-/* Estilo para los enlaces del submenú */
+/* Estilo para los enlaces del submenú como botones */
 .submenu li a {
-  color: white; /* Texto blanco para un alto contraste */
+  color: #fff; /* Texto blanco */
   text-decoration: none;
-  padding: 4px 4px; /* Espaciado ajustado para mayor elegancia */
-  display: block;
-  background-color: transparent; /* Fondo transparente para los enlaces */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
-  border-radius: 6px; /* Bordes redondeados para los enlaces */
+  padding: 8px 16px; /* Espaciado más amplio para el botón */
+  display: block; /* Cambia a bloque */
+  background-color: #94ab61; /* Color de fondo verde suave */
+  border-radius: 6px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
 }
 
 /* Efecto al pasar el mouse sobre un enlace del submenú */
 .submenu li a:hover {
-  background-color: rgba(243, 245, 247, 0.4); /* Fondo azul claro al pasar el mouse */
-  color: rgb(5, 104, 111); /* Texto blanco para alto contraste en hover */
+  background-color: rgba(243, 245, 247, 0.8); /* Fondo claro al pasar el mouse */
+  color: rgb(5, 104, 111); /* Texto azul oscuro en hover */
+  transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
 }
 
 /* Estilo especial para la página de galería resaltada */
 .submenu li a.highlighted {
-  background-color: rgba(59, 53, 53, 0.473); /* Fondo ligeramente más oscuro */
-  color: rgba(254, 254, 254, 0.8); /* Texto normal sin negrita */
-  /* font-weight eliminado para evitar negrita */
-}
-.portfolio-wrap {
-  position: relative; /* Necesario para el efecto de brillo */
+  background-color: rgba(59, 53, 53, 0.8); /* Fondo más oscuro */
+  color: rgba(254, 254, 254, 1); /* Texto blanco normal */
 }
 
-.portfolio-wrap img {
-  display: block; /* Asegúrate de que la imagen ocupe el espacio completo */
-  transition: transform 0.3s ease; /* Suaviza la transición */
-}
-
-.portfolio-wrap:hover img {
-  transform: scale(1.05); /* Efecto de zoom en la imagen al pasar el mouse */
-}
-
-/* Efecto de brillo que no interfiere con los clics */
-.brightness-effect {
-  position: absolute; /* Posiciona el brillo sobre la imagen */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.5); /* Color de brillo */
-  opacity: 0; /* Oculto inicialmente */
-  transition: opacity 0.3s ease; /* Suaviza la transición */
-  pointer-events: none; /* Permite clics en la imagen subyacente */
-}
-
-.portfolio-wrap:hover .brightness-effect {
-  opacity: 1; /* Muestra el brillo al pasar el mouse */
-}
-
-/* Si tienes un efecto de brillo en el fondo */
-.brightness-effect {
-  pointer-events: none; /* Permite clics en la imagen subyacente */
-}
-
-/* Asegúrate de que el enlace sea visible */
-.portfolio-wrap a {
-  position: relative;
-  z-index: 2; /* Asegura que el enlace esté por encima del efecto */
-}
 /* Estilo del botón */
 .styled-button {
   display: block;
