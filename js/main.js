@@ -421,17 +421,21 @@ document.getElementById("contactForm").onsubmit = async function (event) {
   const email = event.target.email.value;
   const message = event.target.message.value;
 
+  console.log("Form submitted:", { name, email, message }); // Agregado para depuración
+
   const response = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, message }),
   });
 
-  if (response.ok) {
+  if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Error response:", errorData); // Log para ver el error
+      alert("There was an error. Please try again.");
+  } else {
       alert("Message sent successfully!");
       event.target.reset();
       document.getElementById("contactModal").style.display = "none"; // Cierra el modal después de enviar
-  } else {
-      alert("There was an error. Please try again.");
   }
 };

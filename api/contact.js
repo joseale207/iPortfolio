@@ -1,9 +1,10 @@
-// /api/contact.js
 export default async function handler(req, res) {
+    console.log("Request Method:", req.method);
+    console.log("Request Body:", req.body);
+
     if (req.method === 'POST') {
         const { name, email, message } = req.body;
 
-        // Aquí puedes procesar los datos, como enviarlos por email o almacenarlos
         console.log("Name:", name);
         console.log("Email:", email);
         console.log("Message:", message);
