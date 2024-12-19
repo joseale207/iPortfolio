@@ -25,6 +25,10 @@
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
 
   <!-- Vendor CSS Files -->
   <link href="/vendor/aos/aos.css" rel="stylesheet">
@@ -644,8 +648,7 @@
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
   <div class="container">
-
-    <div class="section-title text-center">
+    <div class="section-title text-center" data-aos="fade-up">
       <h2>Contact</h2>
       <p>If you have any questions or need legal assistance, feel free to reach out. I am here to help with your legal needs in real estate and corporate law.</p>
     </div>
@@ -653,7 +656,7 @@
     <div class="row" data-aos="fade-in">
       <div class="col-lg-12 d-flex justify-content-around align-items-stretch flex-wrap">
         
-        <div class="info text-center">
+        <div class="info text-center" data-aos="fade-up" data-aos-delay="100">
           <div class="icon">
             <i class="bi bi-geo-alt"></i>
           </div>
@@ -661,7 +664,7 @@
           <p>Andalucia, Spain</p>
         </div>
 
-        <div class="info text-center">
+        <div class="info text-center" data-aos="fade-up" data-aos-delay="200">
           <div class="icon">
             <i class="bi bi-envelope"></i>
           </div>
@@ -669,7 +672,7 @@
           <p><a href="mailto:jose.alejandro.jimenez.h@gmail.com">jose.alejandro.jimenez.h@gmail.com</a></p>
         </div>
 
-        <div class="info text-center">
+        <div class="info text-center" data-aos="fade-up" data-aos-delay="300">
           <div class="icon">
             <i class="bi bi-phone"></i>
           </div>
@@ -677,7 +680,7 @@
           <p><a href="tel:+34610229431">Call me</a></p>
         </div>
 
-        <div class="info text-center">
+        <div class="info text-center" data-aos="fade-up" data-aos-delay="400">
           <div class="icon">
             <i class="bi bi-whatsapp"></i>
           </div>
@@ -686,8 +689,8 @@
         </div>
       </div>
     </div>
-
   </div>
+
   <!-- Botón para abrir el formulario -->
 <!-- Botón estilizado para abrir el formulario de contacto -->
 <button id="openFormButton" class="styled-button">Get in Touch</button>
@@ -695,16 +698,17 @@
 <!-- Modal del formulario de contacto -->
 <div id="contactModal" class="modal">
   <div class="modal-content">
-      <span class="close" id="closeModalButton">&times;</span>
-      <h4 style="text-align: center; color: #333;">Contact Form</h4>
-      <form id="contactForm">
-          <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #94ab61; border-radius: 5px;"/>
-          <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #94ab61; border-radius: 5px;"/>
-          <textarea name="message" placeholder="Your Message" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #94ab61; border-radius: 5px;"></textarea>
-          <button type="submit" style="background-color: #68744c; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">Send</button>
-      </form>
+    <span class="close" id="closeModalButton">&times;</span>
+    <h4 style="text-align: center; color: #333;">Contact Form</h4>
+    <form id="contactForm">
+      <input type="text" id="name" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #94ab61; border-radius: 5px;"/>
+      <input type="email" id="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #94ab61; border-radius: 5px;"/>
+      <textarea id="message" name="message" placeholder="Your Message" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #94ab61; border-radius: 5px;"></textarea>
+      <button type="submit" style="background-color: #46820f; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">Send</button>
+    </form>
   </div>
 </div>
+
 
 
 
@@ -726,7 +730,7 @@
       </div>
   </div>
   <div id="message" style="position: absolute; top: calc(50% - 40px); left: 50%; transform: translate(-50%, -100%); background-color: rgba(205, 109, 174, 0.8); color: rgb(255, 255, 255); padding: 15px; border-radius: 5px; display: none;">
-    Thanks, Emma(+)
+     Emma(+)
 </div>
   <div id="animation-container" style="position: absolute; width: 0%; height: 0%; pointer-events: none;"></div>
 </footer>

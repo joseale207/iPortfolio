@@ -439,3 +439,40 @@ document.getElementById("contactForm").onsubmit = async function (event) {
       document.getElementById("contactModal").style.display = "none"; // Cierra el modal después de enviar
   }
 };
+AOS.init();
+// Abre el formulario cuando se hace clic en el botón
+document.getElementById("openFormButton").onclick = function() {
+  document.getElementById("contactModal").style.display = "block";
+};
+
+// Cierra el modal cuando se hace clic en la "X"
+document.getElementById("closeModalButton").onclick = function() {
+  document.getElementById("contactModal").style.display = "none";
+};
+
+// Enviar formulario a WhatsApp cuando se haga submit
+document.getElementById("contactForm").onsubmit = function(e) {
+  e.preventDefault(); // Evitar la recarga de la página
+
+  // Obtener los datos del formulario
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+
+  // Crear el mensaje para enviar a WhatsApp
+  var whatsappMessage = encodeURIComponent(
+    `*New Contact Request*\n\n` +
+    `*Name:* ${name}\n` +
+    `*Email:* ${email}\n` +
+    `*Message:* ${message}`
+  );
+
+  // Reemplazar "your_phone_number" con tu número de WhatsApp
+  var whatsappURL = `https://wa.me/34610229431?text=${whatsappMessage}`;
+
+  // Redirigir al usuario al enlace de WhatsApp
+  window.open(whatsappURL, '_blank');
+
+  // Cerrar el modal después de enviar
+  document.getElementById("contactModal").style.display = "none";
+};

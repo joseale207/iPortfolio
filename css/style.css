@@ -1354,3 +1354,91 @@ section {
   text-decoration: none;
   cursor: pointer;
 }
+/* Aplicar la animación de hover a todo el contenedor .info */
+.info {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.info:hover {
+  transform: scale(1.05); /* Aumento más sutil de todo el contenedor */
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.2); /* Agregar sombra para dar un efecto de levantamiento */
+}
+
+.info .icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.info:hover .icon {
+  transform: scale(1.1); /* El ícono se amplía un poco, pero no de forma tan pronunciada */
+  color: #007bff; /* Cambia el color del ícono */
+}
+
+.info:hover h4 {
+  color: #007bff; /* Cambia el color del texto */
+}
+
+/* Efecto hover sobre los enlaces */
+.info p a:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+
+/* Mantener las animaciones AOS al entrar en la vista */
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(20px); /* Empuja el elemento hacia abajo */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translateY(0); /* Restaura la posición original */
+}
+/* Estilos para el modal y su contenido */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  overflow-y: auto; /* Permite el desplazamiento si el contenido es largo */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo para el botón */
+.styled-button {
+  background-color: #7d7d7d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.styled-button:hover {
+  background-color: #444441;
+}
