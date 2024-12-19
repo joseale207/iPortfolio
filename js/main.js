@@ -440,6 +440,7 @@ document.getElementById("contactForm").onsubmit = async function (event) {
   }
 };
 AOS.init();
+
 // Abre el formulario cuando se hace clic en el botón
 document.getElementById("openFormButton").onclick = function() {
   document.getElementById("contactModal").style.display = "block";

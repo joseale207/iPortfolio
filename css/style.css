@@ -1416,23 +1416,22 @@ section {
   overflow-y: auto; /* Permite el desplazamiento si el contenido es largo */
 }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 30px;
-  font-weight: bold;
+/* Estilo para los inputs y textarea */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #94ab61;
+  border-radius: 5px;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+textarea {
+  height: 150px; /* Asegura que el campo de mensaje tenga altura suficiente */
 }
 
 /* Estilo para el botón */
 .styled-button {
-  background-color: #7d7d7d;
+  background-color: #777777;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -1440,5 +1439,22 @@ section {
 }
 
 .styled-button:hover {
-  background-color: #444441;
+  background-color: #7d806e;
+}
+
+/* Estilos para la "X" del modal */
+.close {
+  color: #aaa;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
