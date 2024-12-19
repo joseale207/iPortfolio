@@ -465,7 +465,7 @@ document.getElementById("contactForm").onsubmit = function(e) {
     `*New Contact Request*\n\n` +
     `*Name:* ${name}\n` +
     `*Email:* ${email}\n` +
-    `*Message:* ${message}`
+    `*Message Type:* ${message}`
   );
 
   // Reemplazar "your_phone_number" con tu número de WhatsApp

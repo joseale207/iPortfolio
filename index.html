@@ -701,14 +701,19 @@
     <span class="close" id="closeModalButton">&times;</span>
     <h4 style="text-align: center; color: #333;">Contact Form</h4>
     <form id="contactForm">
-      <input type="text" id="name" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #94ab61; border-radius: 5px;"/>
-      <input type="email" id="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #94ab61; border-radius: 5px;"/>
-      <textarea id="message" name="message" placeholder="Your Message" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #94ab61; border-radius: 5px;"></textarea>
-      <button type="submit" style="background-color: #46820f; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">Send</button>
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
+      <!-- Usamos un campo select para elegir el mensaje -->
+      <select id="message" name="message" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #94ab61; border-radius: 5px;">
+        <option value="" disabled selected>Select your message</option>
+        <option value="inquiry">Inquiry</option>
+        <option value="feedback">Feedback</option>
+        <option value="other">Other</option>
+      </select>
+      <button type="submit">Send</button>
     </form>
   </div>
 </div>
-
 
 
 

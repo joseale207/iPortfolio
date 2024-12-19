@@ -1416,8 +1416,8 @@ section {
   overflow-y: auto; /* Permite el desplazamiento si el contenido es largo */
 }
 
-/* Estilo para los inputs y textarea */
-input, textarea {
+/* Estilos generales para los campos de entrada */
+input, select {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -1442,7 +1442,28 @@ textarea {
   background-color: #7d806e;
 }
 
-/* Estilos para la "X" del modal */
+/* Estilos para el modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+}
+
+/* Estilo para la "X" del modal */
 .close {
   color: #aaa;
   font-size: 30px;
@@ -1456,5 +1477,15 @@ textarea {
 .close:focus {
   color: black;
   text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo para el botón "Send" */
+button[type="submit"] {
+  background-color: #46820f;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
