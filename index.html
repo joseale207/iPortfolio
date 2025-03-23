@@ -94,7 +94,7 @@
         </div>
       </div>
         <!-- Aquí agregamos el botón -->
-        <button id="digivolveBtn" class="digivolve-btn">Activar Modo Digital</button>
+        <button id="digivolveBtn" class="digivolve-btn">Digital Mode</button>
         <!-- Fin del botón -->
       <nav id="navbar" class="nav-menu navbar">
         <ul>
@@ -737,33 +737,49 @@
 <!-- End Footer -->
 
 
-<!-- Incluye tu archivo JS -->
-<script src="script.js" defer></script>
+<!-- Incluye tu archivo JS principal -->
+ <!-- Contenedor de partículas -->
+ <div id="particles-container"></div>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+ <!-- Contenedor de partículas 3D -->
+ <div id="particles-3d"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="/vendor/aos/aos.js"></script>
-  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="/vendor/typed.js/typed.umd.js"></script>
-  <script src="/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="/vendor/php-email-form/validate.js"></script>
-  <script src="script.js" defer></script> <!-- Incluye tu archivo JS principal -->
+ <!-- Efecto de destello -->
+ <div id="flash-effect"></div>
 
-  <!-- Template Main JS File -->
-  <script src="/js/main.js"></script>
-  <!-- Lightbox JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-  <!-- Agrega esto antes de cerrar </body> -->
-<script>
- // Crear partículas
+ <!-- Audio para el efecto de sonido -->
+ <audio id="digivolve-sound">
+   <source src="digivolve-sound.mp3" type="audio/mpeg">
+   <source src="digivolve-sound.ogg" type="audio/ogg">
+   <source src="digivolve-sound.wav" type="audio/wav">
+   Tu navegador no soporta el elemento de audio.
+ </audio>
+
+ <!-- Agumon Digital -->
+ <div id="digivolution-container" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; z-index: 10000;">
+  <img id="digivolution-image" src="img/agumon_1.jpg", src alt="Digievolucionando" style="width: 200px; height: auto;">
+</div>
+
+ <!-- Scripts -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r146/three.min.js"></script>
+ <script src="/vendor/purecounter/purecounter_vanilla.js"></script>
+ <script src="/vendor/aos/aos.js"></script>
+ <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+ <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+ <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+ <script src="/vendor/typed.js/typed.umd.js"></script>
+ <script src="/vendor/waypoints/noframework.waypoints.js"></script>
+ <script src="/vendor/php-email-form/validate.js"></script>
+ <script src="/js/main.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+ <script>
+   // Crear partículas
 function createParticles() {
   const particlesContainer = document.getElementById('particles-container');
-  const numParticles = 55; // Número de partículas
+  const numParticles = 55;
 
   for (let i = 0; i < numParticles; i++) {
     const particle = document.createElement('div');
@@ -772,27 +788,23 @@ function createParticles() {
     particle.style.top = `${Math.random() * 100}vh`;
     particlesContainer.appendChild(particle);
 
-    // Animación GSAP para cada partícula
     gsap.to(particle, {
-      x: Math.random() * 500 - 250, // Movimiento horizontal aleatorio
-      y: Math.random() * 500 - 250, // Movimiento vertical aleatorio
-      scale: Math.random() * 2 + 1, // Escala aleatoria
+      x: Math.random() * 500 - 250,
+      y: Math.random() * 500 - 250,
+      scale: Math.random() * 2 + 1,
       opacity: 0,
-      duration: Math.random() * 3 + 2, // Duración aleatoria
-      repeat: -1, // Repetir infinitamente
-      yoyo: true, // Ir y volver
+      duration: Math.random() * 3 + 2,
+      repeat: -1,
+      yoyo: true,
       ease: "power1.inOut",
     });
   }
 }
 
-// Eliminar partículas
 function removeParticles() {
-  const particlesContainer = document.getElementById('particles-container');
-  particlesContainer.innerHTML = '';
+  document.getElementById('particles-container').innerHTML = '';
 }
 
-// Efecto de destello con GSAP
 function flashEffect() {
   const flash = document.getElementById('flash-effect');
   gsap.to(flash, {
@@ -800,69 +812,69 @@ function flashEffect() {
     duration: 0.2,
     ease: "power1.out",
     onComplete: () => {
-      gsap.to(flash, {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power1.in",
-      });
+      gsap.to(flash, { opacity: 0, duration: 0.5, ease: "power1.in" });
     },
   });
 }
 
-// Animación de evolución hacia arriba
-function evolveUp() {
-  const sections = document.querySelectorAll('section'); // Selecciona todas las secciones
-  gsap.from(sections, {
-    y: 100, // Mueve las secciones hacia arriba
-    opacity: 0, // Las hace aparecer gradualmente
-    duration: 1.5,
-    stagger: 0.2, // Retardo entre cada sección
-    ease: "power2.out",
-  });
+const digivolutionImages = [
+  "img/Agumon_2.jpg",
+  "img/Agumon_3.jpg"
+];
+
+const digivolutionContainer = document.getElementById("digivolution-container");
+const digivolutionImage = document.getElementById("digivolution-image");
+
+function startDigivolution() {
+  let index = 0;
+  gsap.set(digivolutionContainer, { display: "block", opacity: 0 });
+  gsap.to(digivolutionContainer, { opacity: 1, duration: 0.5 });
+
+  const interval = setInterval(() => {
+    if (index >= digivolutionImages.length) {
+      clearInterval(interval);
+      gsap.to(digivolutionContainer, {
+        opacity: 0,
+        duration: 0.5,
+        onComplete: () => {
+          digivolutionContainer.style.display = "none";
+        },
+      });
+    } else {
+      gsap.to(digivolutionImage, {
+        opacity: 0,
+        duration: 0.2,
+        onComplete: () => {
+          digivolutionImage.src = digivolutionImages[index];
+          gsap.to(digivolutionImage, { opacity: 1, duration: 0.2 });
+        },
+      });
+      index++;
+    }
+  }, 500);
 }
 
-// Botón de digievolución
 const digivolveBtn = document.getElementById('digivolveBtn');
 const body = document.body;
+const digivolveSound = document.getElementById('digivolve-sound');
 
 digivolveBtn.addEventListener('click', () => {
-  // Efecto de destello
   flashEffect();
-
-  // Cambiar al modo digital después del destello
+  digivolveSound.play();
   setTimeout(() => {
     body.classList.toggle('digital-mode');
-
-    // Crear o eliminar partículas según el modo
     if (body.classList.contains('digital-mode')) {
       createParticles();
-      evolveUp(); // Animación de evolución hacia arriba
-      digivolveBtn.textContent = 'Volver al Modo Normal';
+      startDigivolution();
+      digivolveBtn.textContent = 'Back to Normal Mode';
     } else {
       removeParticles();
-      digivolveBtn.textContent = 'Activar Modo Digital';
+      digivolveBtn.textContent = 'Digital Mode';
     }
-  }, 500); // Retardo para sincronizar con el destello
+  }, 500);
 });
-</script>
-<!-- Contenedor de partículas -->
-<div id="particles-container"></div>
-<!-- Contenedor de partículas -->
 
-<!-- Huevo de Digimon -->
-
-
-<!-- Incluye GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-<!-- Incluye Three.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r146/three.min.js"></script>
-<!-- Contenedor de partículas 3D -->
-<div id="particles-3d"></div>
-
-<!-- Efecto de destello -->
-<div id="flash-effect"></div>
-
+ </script>
 </body>
 
 </html>

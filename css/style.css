@@ -1591,7 +1591,7 @@ h1, h2, h3, a {
 
 /* Degradado animado para el modo digital */
 body.digital-mode {
-  background: linear-gradient(-45deg, #d63030, #258c50, #285aff, #64ffda);
+  background: linear-gradient(-45deg, #ff1b1b, #258c50, #2d56dc, #64ffda);
   background-size: 400% 400%;
   animation: gradientBG 10s ease infinite;
 }
@@ -1676,4 +1676,342 @@ body.digital-mode {
   height: 100%;
   pointer-events: none;
   z-index: 999;
+}
+
+.agumon {
+  width: 100px;
+  height: 120px;
+  position: absolute;
+  pointer-events: none;
+}
+
+.body {
+  width: 100px;
+  height: 120px;
+  background-color: #FFD700; /* Amarillo dorado */
+  border-radius: 50% 50% 40% 40%; /* Forma ovalada */
+  position: relative;
+}
+
+.eye {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+}
+
+.left-eye {
+  left: 20px;
+}
+
+.right-eye {
+  right: 20px;
+}
+
+.pupil {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+}
+
+.left-pupil {
+  left: 25px;
+}
+
+.right-pupil {
+  right: 25px;
+}
+
+.mouth {
+  width: 40px;
+  height: 20px;
+  background-color: #e74427; /* Rojo coral */
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  top: 70px;
+  left: 30px;
+}
+
+.horn {
+  width: 10px;
+  height: 30px;
+  background-color: #baa429; /* Amarillo dorado */
+  position: absolute;
+  top: -10px;
+}
+
+.left-horn {
+  left: 20px;
+  transform: rotate(-30deg);
+}
+
+.right-horn {
+  right: 20px;
+  transform: rotate(30deg);
+}
+
+.agumon {
+  width: 120px;
+  height: 140px;
+  position: absolute;
+  pointer-events: none;
+}
+
+.body {
+  width: 120px;
+  height: 140px;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  border-radius: 50% 50% 40% 40%;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.eye {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.left-eye {
+  left: 20px;
+}
+
+.right-eye {
+  right: 20px;
+}
+
+.pupil {
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+}
+
+.mouth {
+  width: 50px;
+  height: 25px;
+  background-color: #FF4500;
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  top: 80px;
+  left: 35px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.horn {
+  width: 12px;
+  height: 40px;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  position: absolute;
+  top: -15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.left-horn {
+  left: 20px;
+  transform: rotate(-30deg);
+}
+
+.right-horn {
+  right: 20px;
+  transform: rotate(30deg);
+}
+
+.hand {
+  width: 20px;
+  height: 20px;
+  background-color: #FFD700;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.left-hand {
+  left: 10px;
+}
+
+.right-hand {
+  right: 10px;
+}
+
+.foot {
+  width: 30px;
+  height: 20px;
+  background-color: #FFD700;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.left-foot {
+  left: 30px;
+}
+
+.right-foot {
+  right: 30px;
+}
+.agumon {
+  width: 150px;
+  height: 180px;
+  position: absolute;
+  pointer-events: none;
+}
+
+.body {
+  width: 150px;
+  height: 180px;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  border-radius: 50% 50% 40% 40%;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.eye {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.left-eye {
+  left: 25px;
+}
+
+.right-eye {
+  right: 25px;
+}
+
+.pupil {
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 7px;
+}
+
+.highlight {
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+}
+
+.mouth {
+  width: 60px;
+  height: 30px;
+  background-color: #FF4500;
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  top: 100px;
+  left: 45px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.tongue {
+  width: 40px;
+  height: 15px;
+  background-color: #FF6347;
+  border-radius: 10px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+
+.horn {
+  width: 15px;
+  height: 50px;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  position: absolute;
+  top: -20px;
+  border-radius: 5px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.left-horn {
+  left: 25px;
+  transform: rotate(-30deg);
+}
+
+.right-horn {
+  right: 25px;
+  transform: rotate(30deg);
+}
+
+.hand {
+  width: 25px;
+  height: 25px;
+  background-color: #FFD700;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.left-hand {
+  left: 15px;
+}
+
+.right-hand {
+  right: 15px;
+}
+
+.claw {
+  width: 5px;
+  height: 15px;
+  background-color: #FFA500;
+  border-radius: 2px;
+  position: absolute;
+  bottom: -5px;
+}
+
+.foot {
+  width: 40px;
+  height: 25px;
+  background-color: #FFD700;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.left-foot {
+  left: 35px;
+}
+
+.right-foot {
+  right: 35px;
+}
+#digivolution-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  display: none;
+}
+
+#digivolution-image {
+  width: 200px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
 }
