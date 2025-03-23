@@ -1591,7 +1591,7 @@ h1, h2, h3, a {
 
 /* Degradado animado para el modo digital */
 body.digital-mode {
-  background: linear-gradient(-45deg, #ff1b1b, #258c50, #2d56dc, #64ffda);
+  background: linear-gradient(-45deg, #681a1a, #317e51, #315ded, #14e4b3);
   background-size: 400% 400%;
   animation: gradientBG 10s ease infinite;
 }
@@ -1620,10 +1620,10 @@ body.digital-mode {
   position: absolute;
   width: 10px;
   height: 10px;
-  background-color: #64ffda;
+  background-color: #34ffda;
   border-radius: 50%;
   opacity: 0.7;
-  animation: float 8s infinite ease-in-out;
+  animation: float 10s infinite ease-in-out;
 }
 
 @keyframes float {
