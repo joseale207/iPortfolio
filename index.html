@@ -93,7 +93,9 @@
           <a href="https://www.linkedin.com/in/josealejimenez/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
-
+        <!-- Aquí agregamos el botón -->
+        <button id="digivolveBtn" class="digivolve-btn">Activar Modo Digital</button>
+        <!-- Fin del botón -->
       <nav id="navbar" class="nav-menu navbar">
         <ul>
             <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
@@ -756,6 +758,110 @@
   <script src="/js/main.js"></script>
   <!-- Lightbox JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <!-- Agrega esto antes de cerrar </body> -->
+<script>
+ // Crear partículas
+function createParticles() {
+  const particlesContainer = document.getElementById('particles-container');
+  const numParticles = 55; // Número de partículas
+
+  for (let i = 0; i < numParticles; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.left = `${Math.random() * 100}vw`;
+    particle.style.top = `${Math.random() * 100}vh`;
+    particlesContainer.appendChild(particle);
+
+    // Animación GSAP para cada partícula
+    gsap.to(particle, {
+      x: Math.random() * 500 - 250, // Movimiento horizontal aleatorio
+      y: Math.random() * 500 - 250, // Movimiento vertical aleatorio
+      scale: Math.random() * 2 + 1, // Escala aleatoria
+      opacity: 0,
+      duration: Math.random() * 3 + 2, // Duración aleatoria
+      repeat: -1, // Repetir infinitamente
+      yoyo: true, // Ir y volver
+      ease: "power1.inOut",
+    });
+  }
+}
+
+// Eliminar partículas
+function removeParticles() {
+  const particlesContainer = document.getElementById('particles-container');
+  particlesContainer.innerHTML = '';
+}
+
+// Efecto de destello con GSAP
+function flashEffect() {
+  const flash = document.getElementById('flash-effect');
+  gsap.to(flash, {
+    opacity: 1,
+    duration: 0.2,
+    ease: "power1.out",
+    onComplete: () => {
+      gsap.to(flash, {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power1.in",
+      });
+    },
+  });
+}
+
+// Animación de evolución hacia arriba
+function evolveUp() {
+  const sections = document.querySelectorAll('section'); // Selecciona todas las secciones
+  gsap.from(sections, {
+    y: 100, // Mueve las secciones hacia arriba
+    opacity: 0, // Las hace aparecer gradualmente
+    duration: 1.5,
+    stagger: 0.2, // Retardo entre cada sección
+    ease: "power2.out",
+  });
+}
+
+// Botón de digievolución
+const digivolveBtn = document.getElementById('digivolveBtn');
+const body = document.body;
+
+digivolveBtn.addEventListener('click', () => {
+  // Efecto de destello
+  flashEffect();
+
+  // Cambiar al modo digital después del destello
+  setTimeout(() => {
+    body.classList.toggle('digital-mode');
+
+    // Crear o eliminar partículas según el modo
+    if (body.classList.contains('digital-mode')) {
+      createParticles();
+      evolveUp(); // Animación de evolución hacia arriba
+      digivolveBtn.textContent = 'Volver al Modo Normal';
+    } else {
+      removeParticles();
+      digivolveBtn.textContent = 'Activar Modo Digital';
+    }
+  }, 500); // Retardo para sincronizar con el destello
+});
+</script>
+<!-- Contenedor de partículas -->
+<div id="particles-container"></div>
+<!-- Contenedor de partículas -->
+
+<!-- Huevo de Digimon -->
+
+
+<!-- Incluye GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- Incluye Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r146/three.min.js"></script>
+<!-- Contenedor de partículas 3D -->
+<div id="particles-3d"></div>
+
+<!-- Efecto de destello -->
+<div id="flash-effect"></div>
 
 </body>
 

@@ -1489,3 +1489,191 @@ button[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* ================================================== */
+/* Estilos Generales */
+/* ================================================== */
+
+body {
+  background-color: #f0f0f0; /* Fondo gris claro */
+  color: #333333; /* Texto gris oscuro */
+  transition: background-color 1s ease, color 1s ease;
+}
+
+/* ================================================== */
+/* Estilos para el Botón de Digievolución */
+/* ================================================== */
+
+.digivolve-btn {
+  background-color: #ff6f61; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  position: fixed; /* Fijo en la pantalla */
+  top: 20px;
+  right: 20px;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.digivolve-btn:hover {
+  background-color: #ff3b2f; /* Color al pasar el mouse */
+}
+
+/* ================================================== */
+/* Estilos para el Modo Digital */
+/* ================================================== */
+
+body.digital-mode {
+  background-color: #0a192f; /* Fondo azul oscuro */
+  color: #22e8bd; /* Texto gris claro azulado */
+}
+
+body.digital-mode .project-card {
+  background-color: #112240; /* Fondo de tarjetas azul más oscuro */
+  border: 1px solid #64ffda; /* Borde turquesa neón */
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.5); /* Sombra turquesa neón */
+}
+
+body.digital-mode h1,
+body.digital-mode h2,
+body.digital-mode h3 {
+  color: #64ffda; /* Títulos turquesa neón */
+}
+
+body.digital-mode a {
+  color: #64ffda; /* Enlaces turquesa neón */
+}
+
+body.digital-mode a:hover {
+  color: #305bdc; /* Enlaces al pasar el mouse */
+}
+
+body.digital-mode .digivolve-btn {
+  background-color: #64ffda; /* Botón turquesa neón */
+  color: #138b91; /* Texto azul oscuro */
+}
+
+body.digital-mode .digivolve-btn:hover {
+  background-color: #52e3c2; /* Botón turquesa más claro al pasar el mouse */
+}
+
+/* ================================================== */
+/* Animaciones y Transiciones */
+/* ================================================== */
+
+/* Animación de digievolución mejorada */
+@keyframes digivolve {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.digivolve-animation {
+  animation: digivolve 1.5s ease-in-out;
+}
+
+/* Transiciones suaves para los cambios de color */
+.project-card {
+  transition: background-color 1s ease, border 1s ease, box-shadow 1s ease;
+}
+
+h1, h2, h3, a {
+  transition: color 1s ease;
+}
+
+.digivolve-btn {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Degradado animado para el modo digital */
+body.digital-mode {
+  background: linear-gradient(-45deg, #d63030, #258c50, #285aff, #64ffda);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================================================== */
+/* Estilos para las Partículas */
+/* ================================================== */
+
+#particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #64ffda;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-50px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* ================================================== */
+/* Efecto de Destello */
+/* ================================================== */
+
+@keyframes flash {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.flash-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+  animation: flash 0.5s ease-in-out;
+}
+
+
+/* Estilos para el efecto de destello */
+#flash-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Contenedor de partículas 3D */
+#particles-3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
