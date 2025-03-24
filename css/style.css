@@ -1593,7 +1593,7 @@ h1, h2, h3, a {
 body.digital-mode {
   background: linear-gradient(-45deg, #681a1a, #317e51, #315ded, #14e4b3);
   background-size: 400% 400%;
-  animation: gradientBG 10s ease infinite;
+  animation: gradientBG 5s ease infinite;
 }
 
 @keyframes gradientBG {
