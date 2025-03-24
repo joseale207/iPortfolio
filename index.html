@@ -747,36 +747,43 @@
  <!-- Efecto de destello -->
  <div id="flash-effect"></div>
 
- <!-- Audio para el efecto de sonido -->
- <audio id="digivolve-sound">
-   <source src="digivolve-sound.mp3" type="audio/mpeg">
-   <source src="digivolve-sound.ogg" type="audio/ogg">
-   <source src="digivolve-sound.wav" type="audio/wav">
-   Tu navegador no soporta el elemento de audio.
- </audio>
+<!-- Añadir la fuente de reloj digital -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
- <!-- Agumon Digital -->
- <div id="digivolution-container" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; z-index: 10000;">
-  <img id="digivolution-image" src="", src alt="DIGIEVOLUTION" style="width: 500px; height: auto;">
+<!-- Audio para el efecto de sonido -->
+<audio id="digivolve-sound" preload="auto">
+   <source src="/audio/digivolve-sound.mp3" type="audio/mpeg">
+   <source src="/audio/digivolve-sound.ogg" type="audio/ogg">
+   <source src="/audio/digivolve-sound.wav" type="audio/wav">
+   Tu navegador no soporta el elemento de audio.
+</audio>
+
+<!-- Contenedor de texto digital -->
+<div id="digital-text" style="position: fixed; top: 40%; left: 50%; transform: translateX(-50%); font-family: 'Press Start 2P', cursive; font-size: 60px; color: #00ff00; z-index: 10001; display: none;">
+  DIGIVOLUTION!
 </div>
 
- <!-- Scripts -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r146/three.min.js"></script>
- <script src="/vendor/purecounter/purecounter_vanilla.js"></script>
- <script src="/vendor/aos/aos.js"></script>
- <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
- <script src="/vendor/glightbox/js/glightbox.min.js"></script>
- <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
- <script src="/vendor/swiper/swiper-bundle.min.js"></script>
- <script src="/vendor/typed.js/typed.umd.js"></script>
- <script src="/vendor/waypoints/noframework.waypoints.js"></script>
- <script src="/vendor/php-email-form/validate.js"></script>
- <script src="/js/main.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<!-- Contenedor de partículas (opcional) -->
+<div id="particles-container"></div>
 
- <script>
-   // Crear partículas
+<!-- Efecto de flash -->
+<div id="flash-effect" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(255, 255, 255, 0.6); display: none; z-index: 10000;"></div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="/vendor/aos/aos.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="/vendor/typed.js/typed.umd.js"></script>
+<script src="/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="/vendor/php-email-form/validate.js"></script>
+<script src="/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+<script>
 function createParticles() {
   const particlesContainer = document.getElementById('particles-container');
   const numParticles = 55;
@@ -807,78 +814,75 @@ function removeParticles() {
 
 function flashEffect() {
   const flash = document.getElementById('flash-effect');
+  flash.style.display = "block"; // Mostrar flash
+
   gsap.to(flash, {
-    opacity: 1,
-    duration: 0.2,
-    ease: "power1.out",
+    opacity: 1,  // Asegúrate que empieza visible
+    duration: 0.5, // Duración más corta para hacer el flash más notorio
+    repeat: 4,  // Repetir 7 veces (1 inicial y 6 repeticiones)
+    yoyo: true, // Hacer que el flash se desvanezca y aparezca
+    ease: "power1.inOut",
     onComplete: () => {
-      gsap.to(flash, { opacity: 0, duration: 0.5, ease: "power1.in" });
+      flash.style.display = "none"; // Ocultar flash después de completar
     },
   });
 }
 
-const digivolutionImages = [
-  "",
-  "",
-  "",
-  "",
-  ""
-  
-];
 
-const digivolutionContainer = document.getElementById("digivolution-container");
-const digivolutionImage = document.getElementById("digivolution-image");
-
-function startDigivolution() {
-  let index = 0;
-  gsap.set(digivolutionContainer, { display: "block", opacity: 0 });
-  gsap.to(digivolutionContainer, { opacity: 1, duration: 0.5 });
-
-  const interval = setInterval(() => {
-    if (index >= digivolutionImages.length) {
-      clearInterval(interval);
-      gsap.to(digivolutionContainer, {
-        opacity: 0,
-        duration: 0.5,
-        onComplete: () => {
-          digivolutionContainer.style.display = "none";
-        },
-      });
-    } else {
-      gsap.to(digivolutionImage, {
-        opacity: 0,
-        duration: 0.2,
-        onComplete: () => {
-          digivolutionImage.src = digivolutionImages[index];
-          gsap.to(digivolutionImage, { opacity: 1, duration: 0.2 });
-        },
-      });
-      index++;
+document.addEventListener("DOMContentLoaded", () => {
+    const digivolveBtn = document.getElementById("digivolveBtn");
+    const digivolveSound = document.getElementById("digivolve-sound");
+    const body = document.body;
+    const digitalText = document.getElementById("digital-text");
+    
+    if (!digivolveBtn || !digivolveSound) {
+        console.error("No se encontró el botón o el sonido.");
+        return;
     }
-  }, 500);
-}
 
-const digivolveBtn = document.getElementById('digivolveBtn');
-const body = document.body;
-const digivolveSound = document.getElementById('digivolve-sound');
+    digivolveSound.load();
 
-digivolveBtn.addEventListener('click', () => {
-  flashEffect();
-  digivolveSound.play();
-  setTimeout(() => {
-    body.classList.toggle('digital-mode');
-    if (body.classList.contains('digital-mode')) {
-      createParticles();
-      startDigivolution();
-      digivolveBtn.textContent = 'Back to Normal Mode';
-    } else {
-      removeParticles();
-      digivolveBtn.textContent = 'Digital Mode';
-    }
-  }, 500);
+    digivolveBtn.addEventListener("click", () => {
+        // Reproducir sonido al hacer clic
+        digivolveSound.currentTime = 0;
+        digivolveSound.play().catch(error => console.error("Error reproduciendo sonido:", error));
+
+        // Activar el texto de "DIGIVOLUTION!" y titilar
+        digitalText.style.display = "block";
+
+        // Iniciar el efecto de flash
+        flashEffect();
+        
+        // Titilar el texto
+        gsap.fromTo(
+            digitalText, 
+            { opacity: 1 },
+            {
+                opacity: 0,
+                repeat: 6,  // Repite 7 veces (se repite 6 veces después del primer titileo)
+                yoyo: true, // Hace que se oscurezca y aparezca
+                duration: 0.4, // Duración de cada titileo
+                onComplete: () => {
+                    digitalText.style.display = "none"; // Ocultar después de titilar
+                }
+            }
+        );
+
+        // Esperar a que termine el titileo y el flash para activar el modo digital
+        setTimeout(() => {
+            body.classList.toggle("digital-mode");
+            if (body.classList.contains("digital-mode")) {
+                createParticles();
+                digivolveBtn.textContent = "Back to Normal Mode";
+            } else {
+                removeParticles();
+                digivolveBtn.textContent = "Digital Mode";
+            }
+        }, 3000); // Se espera un tiempo después del flash para iniciar el cambio de modo digital
+    });
 });
+</script>
 
- </script>
 </body>
 
 </html>
