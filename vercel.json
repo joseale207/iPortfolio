@@ -28,6 +28,10 @@
     {
       "src": "js/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "audio/**",
+      "use": "@vercel/static"
     }
   ],
   "rewrites": [
