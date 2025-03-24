@@ -1677,4 +1677,46 @@ body.digital-mode {
   pointer-events: none;
   z-index: 999;
 }
+.particle {
+  animation: flicker 21s ease-out forwards;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; } /* Empieza con opacidad al máximo */
+  5% { opacity: 0.2; } /* Baja drásticamente a 0.2 */
+  10% { opacity: 0.8; } /* Sube a 0.8 */
+  15% { opacity: 0.1; } /* Baja a 0.1 */
+  20% { opacity: 0.6; } /* Subida a 0.6 */
+  25% { opacity: 0.05; } /* Baja aún más a 0.05 */
+  30% { opacity: 0.9; } /* Subida a 0.9 */
+  35% { opacity: 0.2; } /* Baja a 0.2 */
+  40% { opacity: 0.1; } /* Baja a 0.1 nuevamente */
+  45% { opacity: 0.7; } /* Sube a 0.7 */
+  50% { opacity: 0.15; } /* Baja a 0.15 */
+  55% { opacity: 0.85; } /* Sube a 0.85 */
+  60% { opacity: 0.3; } /* Baja a 0.3 */
+  65% { opacity: 0.05; } /* Baja a 0.05 */
+  70% { opacity: 0.9; } /* Sube a 0.6 */
+  75% { opacity: 0.4; } /* Baja a 0.4 */
+  80% { opacity: 0.1; } /* Baja nuevamente a 0.1 */
+  85% { opacity: 0.8; } /* Sube a 0.8 */
+  87% { opacity: 0.2; } /* Baja a 0.2 */
+  88% { opacity: 0.1; }
+  89% { opacity: 0.2; }
+  90% { opacity: 0.05; }
+  91% { opacity: 0.1; }
+  92% { opacity: 0.01; }
+  93% { opacity: 0.2; }
+  94% { opacity: 0.05; }
+  95% { opacity: 0.1; }
+  96% { opacity: 0.2; }
+  97% { opacity: 0.05; }
+  98% { opacity: 0.1; }
+  99% { opacity: 0.05; }
+  100% { 
+    opacity: 0.025; /* Al final se estabiliza en 0.01 */
+    animation-timing-function: ease-in-out;
+  }
+}
+
 

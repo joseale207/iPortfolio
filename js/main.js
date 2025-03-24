@@ -477,3 +477,4 @@ document.getElementById("contactForm").onsubmit = function(e) {
   // Cerrar el modal después de enviar
   document.getElementById("contactModal").style.display = "none";
 };
+

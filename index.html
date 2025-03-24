@@ -871,13 +871,25 @@
 <script>
 function createParticles() {
   const particlesContainer = document.getElementById('particles-container');
-  const numParticles = 55;
+  const numParticles = 65;
 
   for (let i = 0; i < numParticles; i++) {
     const particle = document.createElement('div');
     particle.classList.add('particle');
+    
+    // Posición aleatoria
     particle.style.left = `${Math.random() * 100}vw`;
     particle.style.top = `${Math.random() * 100}vh`;
+
+    // Tamaño aleatorio
+    const size = Math.random() * 5 + 5; // tamaño entre 5px y 10px
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+
+    // Color aleatorio
+    /*const colors = ['#00ff00', '#ff0000', '#0000ff', '#ff00ff', '#ffff00']; // Colores de partículas
+    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];*/
+
     particlesContainer.appendChild(particle);
 
     gsap.to(particle, {
@@ -892,6 +904,7 @@ function createParticles() {
     });
   }
 }
+
 
 function removeParticles() {
   document.getElementById('particles-container').innerHTML = '';
@@ -945,7 +958,7 @@ document.addEventListener("DOMContentLoaded", () => {
             { opacity: 1 },
             {
                 opacity: 0,
-                repeat: 6,  // Repite 7 veces (se repite 6 veces después del primer titileo)
+                repeat: 7,  // Repite 7 veces (se repite 6 veces después del primer titileo)
                 yoyo: true, // Hace que se oscurezca y aparezca
                 duration: 0.4, // Duración de cada titileo
                 onComplete: () => {
