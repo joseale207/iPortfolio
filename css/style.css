@@ -2015,3 +2015,15 @@ body.digital-mode {
   height: auto;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
 }
+@keyframes glitchEffect {
+  0% { text-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #0000ff; }
+  20% { text-shadow: -2px -2px 0px #ff0000, 2px 2px 0px #0000ff; }
+  40% { text-shadow: 2px -2px 0px #ff0000, -2px 2px 0px #0000ff; }
+  60% { text-shadow: -2px 2px 0px #ff0000, 2px -2px 0px #0000ff; }
+  80% { text-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #0000ff; }
+  100% { text-shadow: -2px -2px 0px #ff0000, 2px 2px 0px #0000ff; }
+}
+
+.glitch {
+  animation: glitchEffect 0.1s infinite;
+}
