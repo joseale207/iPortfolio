@@ -752,11 +752,13 @@
 
 <!-- Audio para el efecto de sonido -->
 <audio id="digivolve-sound" preload="auto">
-   <source src="/audio/digivolve-sound.mp3" type="audio/mpeg">
-   <source src="/audio/digivolve-sound.ogg" type="audio/ogg">
-   <source src="/audio/digivolve-sound.wav" type="audio/wav">
-   Tu navegador no soporta el elemento de audio.
+  <source src="/audio/digivolve-sound.m4a" type="audio/mpeg">
+  <source src="/audio/digivolve-sound.mp3" type="audio/mpeg">
+  <source src="/audio/digivolve-sound.ogg" type="audio/ogg">
+  <source src="/audio/digivolve-sound.wav" type="audio/wav">
+  Tu navegador no soporta el elemento de audio.
 </audio>
+
 
 <!-- Contenedor de texto digital -->
 <div id="digital-text" style="position: fixed; top: 40%; left: 50%; transform: translateX(-50%); font-family: 'Press Start 2P', cursive; font-size: 60px; color: #00ff00; z-index: 10001; display: none;">
@@ -877,6 +879,9 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 removeParticles();
                 digivolveBtn.textContent = "Digital Mode";
+                // Detener el sonido cuando se vuelve al modo normal
+                digivolveSound.pause();
+                digivolveSound.currentTime = 0; // Reiniciar el sonido para que empiece desde el principio si se vuelve a activar
             }
         }, 3000); // Se espera un tiempo después del flash para iniciar el cambio de modo digital
     });
