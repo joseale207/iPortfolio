@@ -844,7 +844,7 @@
     font-size: 60px;
     color: #00ff00;
     z-index: 100;
-    animation: glitch 2s infinite;
+    animation: glitch 1s infinite;
   }
 
   .glitch:before,
@@ -904,7 +904,7 @@ function flashEffect() {
   gsap.to(flash, {
     opacity: 1,  // Asegúrate que empieza visible
     duration: 0.5, // Duración más corta para hacer el flash más notorio
-    repeat: 6,  // Repetir 7 veces (1 inicial y 6 repeticiones)
+    repeat: 5,  // Repetir 7 veces (1 inicial y 6 repeticiones)
     yoyo: true, // Hacer que el flash se desvanezca y aparezca
     ease: "power1.inOut",
     onComplete: () => {
