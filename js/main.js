@@ -397,84 +397,71 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 2000);
   });
 });
-// JavaScript para abrir y cerrar el modal
-document.getElementById("openFormButton").onclick = function () {
-  document.getElementById("contactModal").style.display = "flex"; // Cambiamos a flex para centrar
-};
 
-document.getElementById("closeModalButton").onclick = function () {
-  document.getElementById("contactModal").style.display = "none";
-};
 
-window.onclick = function (event) {
-  const modal = document.getElementById("contactModal");
-  if (event.target == modal) {
-      modal.style.display = "none";
-  }
-};
+document.addEventListener("DOMContentLoaded", function () {
+  const preguntas = [
+    {
+      pregunta: "¿Qué ley protege los datos personales en Europa?",
+      respuestas: ["GDPR", "DMCA", "Ley del Zodiaco"],
+      correcta: 0
+    },
+    {
+      pregunta: "¿Cuál de estos métodos evalúa candidatos con pruebas situacionales?",
+      respuestas: ["Assessment Center", "Entrevista libre", "Prueba de suerte"],
+      correcta: 0
+    },
+    {
+      pregunta: "Según la legislación, ¿cuál NO es un criterio válido para rechazar a un candidato?",
+      respuestas: ["Edad", "Falta de experiencia", "Religión"],
+      correcta: 2
+    }
+  ];
 
-// Envío de datos a la API
-document.getElementById("contactForm").onsubmit = async function (event) {
-  event.preventDefault();
+  let preguntaActual = 0;
+  const botonWhatsApp = document.getElementById("whatsapp-btn");
+  const modalOverlay = document.getElementById("acertijo-modal");
+  const modalContent = document.querySelector(".modal-content");
+  const textoPregunta = document.getElementById("pregunta");
+  const botonesRespuestas = document.querySelectorAll(".respuesta");
+  const cerrarModal = document.getElementById("cerrar-modal");
 
-  const name = event.target.name.value;
-  const email = event.target.email.value;
-  const message = event.target.message.value;
-
-  console.log("Form submitted:", { name, email, message }); // Agregado para depuración
-
-  const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, message }),
+  // Abrir modal cuando el usuario presiona el botón de WhatsApp
+  botonWhatsApp.addEventListener("click", function () {
+    modalOverlay.classList.add("show");
+    modalContent.classList.add("show");
+    mostrarPregunta();
   });
 
-  if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Error response:", errorData); // Log para ver el error
-      alert("There was an error. Please try again.");
-  } else {
-      alert("Message sent successfully!");
-      event.target.reset();
-      document.getElementById("contactModal").style.display = "none"; // Cierra el modal después de enviar
+  // Cerrar modal
+  cerrarModal.addEventListener("click", function () {
+    modalOverlay.classList.remove("show");
+    modalContent.classList.remove("show");
+    preguntaActual = 0;
+  });
+
+  function mostrarPregunta() {
+    let p = preguntas[preguntaActual];
+    textoPregunta.textContent = p.pregunta;
+    botonesRespuestas.forEach((boton, i) => {
+      boton.textContent = p.respuestas[i];
+    });
   }
-};
-AOS.init();
 
-// Abre el formulario cuando se hace clic en el botón
-document.getElementById("openFormButton").onclick = function() {
-  document.getElementById("contactModal").style.display = "block";
-};
-
-// Cierra el modal cuando se hace clic en la "X"
-document.getElementById("closeModalButton").onclick = function() {
-  document.getElementById("contactModal").style.display = "none";
-};
-
-// Enviar formulario a WhatsApp cuando se haga submit
-document.getElementById("contactForm").onsubmit = function(e) {
-  e.preventDefault(); // Evitar la recarga de la página
-
-  // Obtener los datos del formulario
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var message = document.getElementById("message").value;
-
-  // Crear el mensaje para enviar a WhatsApp
-  var whatsappMessage = encodeURIComponent(
-    `*New Contact Request*\n\n` +
-    `*Name:* ${name}\n` +
-    `*Email:* ${email}\n` +
-    `*Message Type:* ${message}`
-  );
-
-  // Reemplazar "your_phone_number" con tu número de WhatsApp
-  var whatsappURL = `https://wa.me/34610229431?text=${whatsappMessage}`;
-
-  // Redirigir al usuario al enlace de WhatsApp
-  window.open(whatsappURL, '_blank');
-
-  // Cerrar el modal después de enviar
-  document.getElementById("contactModal").style.display = "none";
-};
-
+  window.verificarRespuesta = function (indice) {
+    if (indice === preguntas[preguntaActual].correcta) {
+      preguntaActual++;
+      if (preguntaActual < preguntas.length) {
+        mostrarPregunta();
+      } else {
+        modalOverlay.classList.remove("show");
+        modalContent.classList.remove("show");
+        window.location.href = "https://wa.me/34610229431";
+      }
+    } else {
+      alert("Respuesta incorrecta. Inténtalo de nuevo.");
+      preguntaActual = 0;
+      mostrarPregunta();
+    }
+  };
+});

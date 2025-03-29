@@ -675,40 +675,31 @@
         </div>
 
 
+            <!-- Botón para abrir el acertijo -->
         <div class="info text-center" data-aos="fade-up" data-aos-delay="400">
           <div class="icon">
             <i class="bi bi-whatsapp"></i>
           </div>
           <h4>WhatsApp:</h4>
-          <p><a href="https://wa.me/34610229431" target="_blank">Chat with me</a></p>
+          <button id="whatsapp-btn" class="btn btn-primary">Acceder a WhatsApp</button>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Botón para abrir el formulario -->
-<!-- Botón estilizado para abrir el formulario de contacto -->
-<button id="openFormButton" class="styled-button">Get in Touch</button>
+        <!-- Modal del acertijo -->
+        <div id="acertijo-modal" class="modal-overlay">
+          <div class="modal-content">
+            <h3>Resuelve el acertijo</h3>
+            <p id="pregunta"></p>
+            <div id="opciones">
+              <button class="respuesta btn btn-secondary" onclick="verificarRespuesta(0)"></button>
+              <button class="respuesta btn btn-secondary" onclick="verificarRespuesta(1)"></button>
+              <button class="respuesta btn btn-secondary" onclick="verificarRespuesta(2)"></button>
+            </div>
+            <button id="cerrar-modal" class="close-btn">&times;</button>
+          </div>
+        </div>
 
-<!-- Modal del formulario de contacto -->
-<div id="contactModal" class="modal">
-  <div class="modal-content">
-    <span class="close" id="closeModalButton">&times;</span>
-    <h4 style="text-align: center; color: #333;">Contact Form</h4>
-    <form id="contactForm">
-      <input type="text" id="name" name="name" placeholder="Your Name" required />
-      <input type="email" id="email" name="email" placeholder="Your Email" required />
-      <!-- Usamos un campo select para elegir el mensaje -->
-      <select id="message" name="message" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #94ab61; border-radius: 5px;">
-        <option value="" disabled selected>Select your message</option>
-        <option value="inquiry">Inquiry</option>
-        <option value="feedback">Feedback</option>
-        <option value="other">Other</option>
-      </select>
-      <button type="submit">Send</button>
-    </form>
-  </div>
-</div>
+        
+
 
 
 

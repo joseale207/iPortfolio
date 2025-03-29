@@ -1431,7 +1431,7 @@ textarea {
 
 /* Estilo para el botón */
 .styled-button {
-  background-color: #777777;
+  background-color: #699a48;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -1439,7 +1439,7 @@ textarea {
 }
 
 .styled-button:hover {
-  background-color: #7d806e;
+  background-color: #17eb3b;
 }
 
 /* Estilos para el modal */
@@ -1591,9 +1591,9 @@ h1, h2, h3, a {
 
 /* Degradado animado para el modo digital */
 body.digital-mode {
-  background: linear-gradient(-45deg, #681a1a, #317e51, #315ded, #14e4b3);
+  background: linear-gradient(-45deg, #d72828, #317e51, #315ded, #14e4b3);
   background-size: 400% 400%;
-  animation: gradientBG 5s ease infinite;
+  animation: gradientBG 7s ease infinite;
 }
 
 @keyframes gradientBG {
@@ -1678,7 +1678,7 @@ body.digital-mode {
   z-index: 999;
 }
 .particle {
-  animation: flicker 21s ease-out forwards;
+  animation: flicker 13s ease-out forwards;
 }
 
 @keyframes flicker {
@@ -1717,6 +1717,75 @@ body.digital-mode {
     opacity: 0.025; /* Al final se estabiliza en 0.01 */
     animation-timing-function: ease-in-out;
   }
+}
+
+/* Modal Overlay - Fondo difuminado */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Oscurece el fondo */
+  backdrop-filter: blur(5px); /* Desenfoque */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Contenido del modal */
+.modal-content {
+  background: rgb(234, 240, 241);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Mostrar modal con animación */
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal-content.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Botón de cerrar */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Estilos de los botones */
+.respuesta {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #497e3d;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.respuesta:hover {
+  background-color: #138718;
 }
 
 
