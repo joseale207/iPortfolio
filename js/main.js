@@ -398,7 +398,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const preguntas = [
     {
@@ -426,6 +425,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const botonesRespuestas = document.querySelectorAll(".respuesta");
   const cerrarModal = document.getElementById("cerrar-modal");
 
+  let timer;
+
   // Abrir modal cuando el usuario presiona el botón de WhatsApp
   botonWhatsApp.addEventListener("click", function () {
     modalOverlay.classList.add("show");
@@ -438,6 +439,7 @@ document.addEventListener("DOMContentLoaded", function () {
     modalOverlay.classList.remove("show");
     modalContent.classList.remove("show");
     preguntaActual = 0;
+    clearTimeout(timer);  // Limpiar el temporizador al cerrar
   });
 
   function mostrarPregunta() {
@@ -446,9 +448,23 @@ document.addEventListener("DOMContentLoaded", function () {
     botonesRespuestas.forEach((boton, i) => {
       boton.textContent = p.respuestas[i];
     });
+
+    // Limpiar cualquier temporizador anterior antes de establecer uno nuevo
+    clearTimeout(timer);
+
+    // Establecer el temporizador de 10 segundos para cada pregunta
+    timer = setTimeout(function () {
+      // Si no se respondió en 10 segundos, cerrar el modal y reiniciar las preguntas
+      alert("Tiempo agotado. Por razones de seguridad, tendrás que intentar de nuevo.");
+      modalOverlay.classList.remove("show");
+      modalContent.classList.remove("show");
+      preguntaActual = 0;  // Reiniciar a la primera pregunta
+    }, 10000); // 10 segundos = 10000ms
   }
 
   window.verificarRespuesta = function (indice) {
+    clearTimeout(timer);  // Limpiar el temporizador si ya se respondió correctamente
+
     if (indice === preguntas[preguntaActual].correcta) {
       preguntaActual++;
       if (preguntaActual < preguntas.length) {
@@ -456,7 +472,7 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         modalOverlay.classList.remove("show");
         modalContent.classList.remove("show");
-        window.location.href = "https://wa.me/34610229431";
+        window.location.href = "https://wa.me/34610229431"; // Redirigir a WhatsApp cuando se respondan correctamente todas las preguntas
       }
     } else {
       alert("Respuesta incorrecta. Inténtalo de nuevo.");

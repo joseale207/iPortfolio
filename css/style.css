@@ -1465,7 +1465,7 @@ textarea {
 
 /* Estilo para la "X" del modal */
 .close {
-  color: #aaa;
+  color: #c1d0cb;
   font-size: 30px;
   font-weight: bold;
   position: absolute;
@@ -1777,7 +1777,7 @@ body.digital-mode {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #497e3d;
+  background-color: #518446;
   color: rgb(255, 255, 255);
   font-size: 16px;
   cursor: pointer;
@@ -1785,7 +1785,16 @@ body.digital-mode {
 }
 
 .respuesta:hover {
-  background-color: #138718;
+  background-color: #21a027;
+}
+#whatsapp-btn {
+  background-color: #2a8f2e;
+  transition: all 0.3s ease; /* Añadimos una transición suave */
+}
+
+#whatsapp-btn:hover {
+  background-color: #1e6f1b;  /* Color cuando el cursor está sobre el botón */
+  transform: scale(1.1);  /* Aumenta el tamaño del botón */
 }
 
 
