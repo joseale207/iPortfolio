@@ -189,9 +189,13 @@
    * Initiate portfolio lightbox 
    */
   const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
+    selector: '[data-lightbox="screenshots"]',
+    touchNavigation: true,
+    openEffect: 'zoom',
+    closeEffect: 'fade'
   });
-
+  console.log('Lightbox iniciado con', 
+    document.querySelectorAll('[data-lightbox="screenshots"]').length, 'imágenes'); // Debug
   /**
    * Portfolio details slider
    */
@@ -481,3 +485,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 });
+// Inicialización consistente de GLightbox
+const lightbox = GLightbox({
+  selector: '[data-lightbox="portfolio"]',
+  touchNavigation: true,
+  keyboardNavigation: true
+});
+
+// Debugging
+console.log('Lightbox iniciado con:', 
+  document.querySelectorAll('[data-lightbox="portfolio"]').length, 'imágenes');

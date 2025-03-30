@@ -648,58 +648,47 @@
   <div class="container">
     <div class="section-title text-center" data-aos="fade-up">
       <h2>Contact</h2>
-      <p>If you have any questions, feel free to reach out. I am here to help.</p>
+      <p>Have questions? Reach out—I'm happy to help.</p>
     </div>
 
-    <div class="row" data-aos="fade-in">
-      <div class="col-lg-12 d-flex justify-content-around align-items-stretch flex-wrap">
-        
-        <div class="info text-center" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon">
-            <i class="bi bi-geo-alt"></i>
-          </div>
-          <h4>Location:</h4>
-          <p>Andalucia, Spain</p>
+    <div class="row justify-content-center" data-aos="fade-in">
+      <!-- Location -->
+      <div class="col-md-4 info text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon"><i class="bi bi-geo-alt"></i></div>
+        <h4>Location:</h4>
+        <p>Andalucia, Spain</p>
+      </div>
+
+      <!-- Email -->
+      <div class="col-md-4 info text-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon"><i class="bi bi-envelope"></i></div>
+        <h4>Email:</h4>
+        <p><a href="mailto:jose.alejandro.jimenez.h@gmail.com" class="text-break">jose.alejandro.jimenez.h@gmail.com</a></p>
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="col-md-4 info text-center" data-aos="fade-up" data-aos-delay="300">
+        <div class="icon"><i class="bi bi-whatsapp"></i></div>
+        <h4>WhatsApp:</h4>
+        <button id="whatsapp-btn" class="btn btn-primary btn-sm">Chat with me</button>
+      </div>
+    </div>
+
+    <!-- Acertijo Modal -->
+    <div id="acertijo-modal" class="modal-overlay">
+      <div class="modal-content text-center p-3">
+        <h3 class="mb-3">Resuelve el acertijo</h3>
+        <p id="pregunta" class="mb-3"></p>
+        <div id="opciones" class="d-flex flex-column gap-2">
+          <button class="respuesta btn btn-outline-secondary" onclick="verificarRespuesta(0)"></button>
+          <button class="respuesta btn btn-outline-secondary" onclick="verificarRespuesta(1)"></button>
+          <button class="respuesta btn btn-outline-secondary" onclick="verificarRespuesta(2)"></button>
         </div>
-
-        <div class="info text-center" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon">
-            <i class="bi bi-envelope"></i>
-          </div>
-          <h4>Email:</h4>
-          <p><a href="mailto:jose.alejandro.jimenez.h@gmail.com">jose.alejandro.jimenez.h@gmail.com</a></p>
-        </div>
-
-
-            <!-- Botón para abrir el acertijo -->
-        <div class="info text-center" data-aos="fade-up" data-aos-delay="400">
-          <div class="icon">
-            <i class="bi bi-whatsapp"></i>
-          </div>
-          <h4>WhatsApp:</h4>
-          <button id="whatsapp-btn"  class="btn btn-primary">Chat with me</button>
-        </div>
-
-        <!-- Modal del acertijo -->
-        <div id="acertijo-modal" class="modal-overlay">
-          <div class="modal-content">
-            <h3>Resuelve el acertijo</h3>
-            <p id="pregunta"></p>
-            <div id="opciones">
-              <button class="respuesta btn btn-secondary" onclick="verificarRespuesta(0)"></button>
-              <button class="respuesta btn btn-secondary" onclick="verificarRespuesta(1)"></button>
-              <button class="respuesta btn btn-secondary" onclick="verificarRespuesta(2)"></button>
-            </div>
-            <button id="cerrar-modal" class="close-btn">&times;</button>
-          </div>
-        </div>
-
-        
-
-
-
-
-</section><!-- End Contact Section -->
+        <button id="cerrar-modal" class="close-btn mt-3">&times;</button>
+      </div>
+    </div>
+  </div>
+</section>
 
   </main><!-- End #main -->
 

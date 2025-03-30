@@ -573,17 +573,16 @@ section {
   z-index: 1;
 }
 
-.portfolio .portfolio-wrap::before {
-  content: "";
-  background: rgba(255, 255, 255, 0.5);
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  transition: all ease-in-out 0.3s;
-  z-index: 2;
-  opacity: 0;
+
+.portfolio-wrap {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.portfolio-wrap:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .portfolio .portfolio-wrap .portfolio-links {
@@ -1110,9 +1109,6 @@ section {
 }
 
 
-.portfolio-wrap video {
-  pointer-events: auto; /* Permite que el video siga siendo interactivo */
-}
 .contact {
   padding: 60px 0; /* Espacio vertical adicional */
   background-color: #f9f9f9; /* Fondo claro para destacar la sección */
