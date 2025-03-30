@@ -1793,4 +1793,18 @@ body.digital-mode {
   transform: scale(1.1);  /* Aumenta el tamaño del botón */
 }
 
+/* Estilo para el párrafo destacado en el Hero */
+#hero .destacado {
+  font-size: 1.9rem; /* Tamaño aumentado (aproximadamente 29px) */
+  font-weight: 500;  /* Grosor de fuente medio */
+  letter-spacing: 0.5px; /* Espaciado entre letras */
+  margin: 1rem 0;    /* Espaciado vertical */
+  color: #fff;       /* Color blanco (o el que prefieras) */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra para mejor legibilidad */
+}
 
+/* Opcional: Ajuste para el texto animado */
+#hero .typed {
+  color: #61f0e9;    /* Color azul para el texto animado */
+  font-weight: 600;  /* Negrita */
+}
